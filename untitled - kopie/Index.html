@@ -7,11 +7,11 @@
     <title>Portfolio van Viresh</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="portfolio-page" onload="showModal()">
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navdiv">
-        <div class="logo"><a href="Index.html">Portfolio</a></div>
+        <div class="logo"><a href="Index.html">Port<span>Folio</span></a></div>
         <ul>
             <li><a href="Index.html" class="button">Home</a></li>
             <li><a href="About-me.html" class="button">About me</a></li>
@@ -19,8 +19,8 @@
             <li><a href="Projecten.html" class="button">Projecten</a></li>
             <li><a href="CV.html" class="button">Vaardigheden</a></li>
             <li><a href="Programmeertalenopmaaktalen.html" class="button">Webtechnologieën</a></li>
-            <li><a href="Contact.html" class="button">Contact</a></li>
         </ul>
+        <button id="toggle-mode">🌙</button>
     </div>
 </nav>
 
@@ -29,7 +29,7 @@
     <h1>Welkom op mijn website!<br>Ik ben Viresh, webdesigner en programmeur.</h1>
     <h1 class="htmlencss">HTML en CSS.</h1>
 
-    <a href="Contact.html" class="hire-me-btn">Hire me</a>
+    <a href="Contact.html" class="hire-me-btn" onclick="logHireMeAction()">Hire me</a>
 </section>
 
 <!-- Afbeelding -->
@@ -50,6 +50,93 @@
         </ul>
     </div>
 </footer>
+
+<div id="modalbox">
+    <img src="img/cookies.png" class="cookies">
+    <p class="coo">Wij gebruiken cookies om de gebruikers ervaring te verbeteren.</p>
+    <button type="button" onclick="logAction()" class="effect-button">Accept</button>
+    <img src="img/close.png" class="close-icon" onclick="closeModal(); logCloseAction();">
+
+</div>
+
+<script>const toggleModeBtn = document.getElementById("toggle-mode");
+const body = document.querySelector(".portfolio-page");
+
+
+
+// Light/Dark mode toggle
+toggleModeBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+    if (body.classList.contains("light-mode")) {
+        toggleModeBtn.textContent = "🌞";
+    } else {
+        toggleModeBtn.textContent = "🌙";
+    }
+// Light/Dark mode toggle
+    toggleModeBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            toggleModeBtn.textContent = "🌞";
+            console.log("Light mode is ingeschakeld");
+        } else {
+            toggleModeBtn.textContent = "🌙";
+            console.log("Dark mode is ingeschakeld");
+        }
+    });
+
+
+});
+function logAction() {
+    // Verberg de modal
+    const modalbox = document.getElementById("modalbox");
+    modalbox.style.display = "none";
+
+
+    console.log("Modal gesloten via de knop 'Accept'.");
+}
+function closeModal() {
+    const modalbox = document.getElementById("modalbox");
+    modalbox.style.display = "none";
+}
+
+function logCloseAction() {
+    console.log("De sluitknop is aangeklikt!");
+}
+
+
+// Cookie modal functions
+    let modalbox = document.getElementById("modalbox");
+
+    function showModal() {
+        setTimeout(() => {
+            modalbox.style.display = "block";
+        }, 2000);
+    }
+// Selecteer alle links in de sociale media lijst
+const socialLinks = document.querySelectorAll(".social-media a");
+
+// Voeg een click-eventlistener toe aan elke link
+socialLinks.forEach(link => {
+    link.addEventListener("click", (event) => {
+        console.log(`De link naar ${link.textContent} is aangeklikt.`);
+    });
+});
+// Selecteer alle links in de navigatie
+const navLinks = document.querySelectorAll('.button');
+
+// Voeg een eventlistener toe voor elke link
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        console.log(`${event.target.textContent} geklikt`);
+    });
+});
+
+
+
+
+
+
+</script>
 </body>
 </html>
-
