@@ -143,6 +143,7 @@ html, body.bodyContact{
     margin: 0;
     display: flex;
     flex-direction: column;
+color: white;
 }
 
 /* Zorg ervoor dat de content zich aanpast en de footer onderaan wordt gepositioneerd */
@@ -150,6 +151,7 @@ body.bodyContact {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 /* Footer stijl */
@@ -305,6 +307,7 @@ button:hover {
     padding: 20px; /* Padding binnen de container */
     border-radius: 10px; /* Ronde hoeken */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Schaduw effect */
+    color: black;
 }
 
 h1 {
@@ -445,6 +448,7 @@ h2 {
     border-radius: 5px; /* Ronde hoeken */
     padding: 15px; /* Padding binnen de projectsectie */
     margin-bottom: 15px; /* Ruimte onder elk project */
+    color: black;
 }
 
 h3 {
@@ -822,6 +826,7 @@ header p {
     width: 250px;
     padding: 20px;
     text-align: center;
+    color: black;
 }
 
 /* Titel styling voor elk programmeertaal kaart */
@@ -1294,25 +1299,11 @@ nav ul{
 
 
 
-#greeting-container {
-    padding: 30px;
-    border: 2px solid rgba(34, 139, 34, 0.8); /* Subtiele groene rand */
-    border-radius: 15px; /* Iets meer afronding */
-    background: linear-gradient(greenyellow , green, #a8e4a0); /* Zachte groene gradient */
-    box-shadow: 6px 6px 12px rgba(0, 100, 0, 0.4), -4px -4px 8px rgba(34, 139, 34, 0.3); /* Donkergroene schaduwen */
-    text-align: center; /* Tekst netjes in het midden */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaties voor hover */
-}
-
-#greeting-container:hover {
-    transform: scale(1.05); /* Vergroot het element een beetje bij hover */
-    box-shadow: 8px 8px 16px rgba(0, 100, 0, 0.5), -6px -6px 12px rgba(34, 139, 34, 0.4); /* Sterkere donkergroene schaduw bij hover */
-}
 
 
 
 #greeting-message {
-    font-size: 2rem;
+    font-size: 40px;
     margin: 0;
 }
 
@@ -1446,15 +1437,13 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     color: white;
-    background-color: #007BFF;
+    background-color: green;
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
+
 
 /* Specifieke stijlen per item */
 .nav-item-home .button {
@@ -1463,6 +1452,7 @@ body {
 
 .nav-item-about .button {
     background-color: darkgreen; /* Blauw voor About me */
+
 }
 
 .nav-item-opleiding .button {
@@ -1486,3 +1476,44 @@ body {
 }
 
 
+
+
+.launch-time{
+    display: flex;
+}
+
+.launch-time div{
+     flex-basis: 100px;
+}
+
+.launch-time div p{
+    font-size: 60px;
+    margin-bottom: -14px;
+}
+
+.rocket{
+    width: 250px;
+    position:absolute;
+    right: 10%;
+    bottom: 0;
+    animation: rocket 4s linear infinite;
+}
+
+@keyframes rocket {
+  0%{
+      bottom: 0;
+      opacity: 0;
+  }
+   100%{
+        bottom: 105%;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+.container{
+    color: black;
+}

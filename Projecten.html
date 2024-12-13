@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
@@ -17,6 +16,7 @@
             <li><a href="About-me.html" class="button">About me </a></li>
             <li><a href="Opleiding.html" class="button">Opleiding</a></li>
             <li><a href="Projecten.html" class="button">Projecten</a></li>
+            <li><a href="HamburgerMenuPage.html" class="button">Hamburgermenu</a></li>
             <li><a href="CV.html" class="button">Vaardigheden</a></li>
             <li><a href="Programmeertalenopmaaktalen.html " class="button">Webtechnologieën</a></li>
             <li><a href="Contact.html" class="button">Contact</a></li>
@@ -46,62 +46,6 @@
         </div>
         <!-- Voeg meer projecten toe als dat nodig is -->
     </section>
-    <div class="countdown-container">
-        <h1>Countdown tot 25 november</h1>
-        <div id="countdown">
-            <div class="time-box">
-                <span id="days">0</span>
-                <p>Dagen</p>
-            </div>
-            <div class="time-box">
-                <span id="hours">0</span>
-                <p>Uren</p>
-            </div>
-            <div class="time-box">
-                <span id="minutes">0</span>
-                <p>Minuten</p>
-            </div>
-            <div class="time-box">
-                <span id="seconds">0</span>
-                <p>Seconden</p>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Countdown einddatum instellen
-        const countdownDate = new Date("November 25, 2024 00:00:00").getTime();
-
-        // Functie om de countdown bij te werken
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeLeft = countdownDate - now;
-
-            // Bereken dagen, uren, minuten en seconden
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            // Update de HTML
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
-
-            // Stop de countdown als de tijd is verstreken
-            if (timeLeft < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("countdown").innerHTML = "<h2>Tijd is verstreken!</h2>";
-            }
-        }
-
-        // Update de countdown elke seconde
-        const countdownInterval = setInterval(updateCountdown, 1000);
-
-        // Initialiseer de countdown
-        updateCountdown();
-
-    </script>
 </main>
 </body>
 </html>

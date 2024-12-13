@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
@@ -17,6 +16,7 @@
             <li><a href="About-me.html" class="button">About me </a></li>
             <li><a href="Opleiding.html" class="button">Opleiding</a></li>
             <li><a href="Projecten.html" class="button">Projecten</a></li>
+            <li><a href="HamburgerMenuPage.html" class="button">Hamburgermenu</a></li>
             <li><a href="CV.html" class="button">Vaardigheden</a></li>
             <li><a href="Programmeertalenopmaaktalen.html " class="button">Webtechnologieën</a></li>
             <li><a href="Contact.html" class="button">Contact</a></li>
@@ -41,6 +41,28 @@
         <button type="submit" onclick="logSubmitAction()">Verstuur</button>
     </form>
 </div>
+<div class="launch-time">
+    <div>
+        <p id="days">00</p>
+        <span>Days</span>
+    </div>
+    <div>
+        <p id="hours">00</p>
+        <span>Hours</span>
+    </div>
+    <div>
+        <p id="minutes">00</p>
+        <span>Minutes</span>
+    </div>
+    <div>
+        <p id="seconds">00</p>
+        <span>Seconds</span>
+    </div>
+</div>
+<img src="img/rocket.png" class="rocket">
+
+
+
 
 
 
@@ -51,7 +73,34 @@ function logSubmitAction() {
     console.log("De knop 'Verstuur' is aangeklikt!");
 }
 
+var countDownDate = new Date("jan 1, 2025 00:00:00").getTime();
+var x = setInterval(function (){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if (distance < 0){
+        clearInterval(x);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+    }
+
+},1000);
 </script>
+
+
+
 
 </body>
 </html>
