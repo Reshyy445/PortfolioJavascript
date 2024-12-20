@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navdiv">
+        <div class="logo"><a href="Index.html">Port<span>Folio</span></a></div>
+        <button class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="Index.html" class="button">Home</a></li>
+            <li><a href="About-me.html" class="button">About me</a></li>
+            <li><a href="Opleiding.html" class="button">Opleiding</a></li>
+            <li><a href="Projecten.html" class="button">Projecten</a></li>
+            <li><a href="CV.html" class="button">Vaardigheden</a></li>
+            <li><a href="Programmeertalenopmaaktalen.html" class="button">Webtechnologieën</a></li>
+            <li><a href="Contact.html" class="button">Contact</a></li>
+        </ul>
+        <button id="toggle-mode">🌙</button>
+    </div>
+</nav>
+
+    <header class="header2">
+<h1>Opleiding Software Developer</h1>
+    </header>
+<main class="container2">
+    <section>
+        <h2>Wat leer je tijdens de opleiding?</h2>
+        <p>
+            Als eerst doe je kennis op over front-end development en leer je de basis van de programmeertalen HTML, CSS en JavaScript.
+            Daarna verdiep je je meer in de back-end en leer je PHP en eventueel ook Python.
+            Je maakt daarbij een connectie met een database en bewerkt de gegevens met behulp van de taal SQL.
+        </p>
+        <p>
+            Je leert werken op basis van verschillende projecten. Binnen een project werk je samen. Natuurlijk moet je ook wel eens zelfstandig kunnen werken.
+            Verder volg je tijdens de opleiding drie of vier keuzedelen. Bijvoorbeeld programmeren van microcontrollers, front-end development, persoonlijk profileren, internationalisering en blockchain.
+            Jij kiest welk keuzedeel je wilt.
+        </p>
+
+        <button class="learn-more-btn" onclick="window.location.href='https://www.techniekcollegerotterdam.nl/opleidingen/it-en-online/software-developer-bbl'">
+            Hover over mij!
+            <span class="tooltiptext">Extra informatie</span>
+        </button>
+
+
+
+    <div class="video-container">
+        <iframe
+                src="https://www.youtube.com/embed/2T7Xw5dVLyk"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+        <p class="video-credit">
+            Video credit: <a href="https://www.youtube.com/channel/[Kanaal-ID]" target="_blank">
+            NoCopyrightFootages</a>
+        </p>
+    </div>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
